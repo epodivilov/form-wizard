@@ -17,12 +17,12 @@ export const RouterContext = createContext<RouterContextProps>({
   pushState: () => {},
 });
 
-export const Router: FC<PropsWithChildren<{}>> = ({ children }) => {
+export const Router: FC<PropsWithChildren<{ base: string }>> = ({ base, children }) => {
   const [routerState, setRouterState] = useState(window.location.toString());
 
   const pushState = useCallback((newUrl) => {
     window.history.pushState(null, '', newUrl);
-    setRouterState(newUrl);
+    setRouterState(newUrl.replace(base, ''));
   }, []);
 
   return createElement(
