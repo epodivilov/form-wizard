@@ -9,23 +9,28 @@ Automatic form generator by JSON configuration.
   "items": [
     {
       "type": "number",
-      "label": "number"
+      "label": "number",
+      "value": 10
     },
     {
       "type": "text",
-      "label": "text"
+      "label": "text",
+      "value": "default text"
     },
     {
       "type": "checkbox",
-      "label": "checkbox"
+      "label": "checkbox",
+      "value": true
     },
     {
       "type": "date",
-      "label": "date"
+      "label": "date",
+      "value": "2013-01-08"
     },
     {
       "type": "textarea",
-      "label": "textarea"
+      "label": "textarea",
+      "value": "Some text"
     },
     {
       "type": "group",
@@ -33,11 +38,14 @@ Automatic form generator by JSON configuration.
       "items": [
         {
           "type": "radio",
-          "label": "radio #1"
+          "label": "radio #1",
+          "name": "group",
+          "value": true
         },
         {
           "type": "radio",
-          "label": "radio #2"
+          "label": "radio #2",
+          "name": "group"
         }
       ]
     }
