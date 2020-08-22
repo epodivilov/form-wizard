@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gh-pages -d dist",
+    "deploy": "rm -rf ./dist && npm run build && gh-pages -d dist",
     "start": "parcel serve source/index.html --dist-dir ./dist",
     "build": "parcel build --no-source-maps --no-cache source/index.html --dist-dir ./dist --public-url /form-wizard/",
     "lint": "eslint --ext .tsx,.ts source/"
