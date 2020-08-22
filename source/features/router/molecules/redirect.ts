@@ -6,10 +6,10 @@ type RedirectProps = {
   from: string;
 };
 export const Redirect: FC<RedirectProps> = ({ to, from }) => {
-  const { pathname, pushState } = useContext(RouterContext);
+  const { base, pathname, pushState } = useContext(RouterContext);
 
   if (pathname === from) {
-    pushState(to);
+    pushState(base + to);
   }
 
   return null;

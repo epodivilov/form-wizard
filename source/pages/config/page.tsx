@@ -15,7 +15,7 @@ function prettify(string: string) {
 }
 
 export const ConfigPage: FC = () => {
-  const { pathname, pushState } = useContext(RouterContext);
+  const { base, pathname, pushState } = useContext(RouterContext);
 
   const [config, setConfig] = useState<string>('');
 
@@ -43,7 +43,7 @@ export const ConfigPage: FC = () => {
 
       try {
         textInput.current.value = prettify(textInput.current.value || '""');
-        pushState(`${pathname}?${params}`);
+        pushState(`${base + pathname}?${params}`);
       } catch (error) {
         alert(error);
       }
