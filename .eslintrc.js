@@ -1,14 +1,9 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2020: true,
-  },
+  env: { browser: true, es2020: true },
   extends: ['plugin:react/recommended', 'airbnb'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
+    ecmaFeatures: { jsx: true },
     ecmaVersion: 11,
     sourceType: 'module',
   },
@@ -20,20 +15,18 @@ module.exports = {
       2,
       'ignorePackages',
       {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
+        js: 'never', jsx: 'never', ts: 'never', tsx: 'never',
       },
     ],
+    '@typescript-eslint/no-unused-vars': 2,
+    'react/prop-types': 0,
+    'jsx-a11y/label-has-associated-control': [2, { assert: 'htmlFor' }],
   },
   settings: {
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
     'import/resolver': {
       typescript: {},
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
+      node: { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     },
   },
 };
